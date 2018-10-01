@@ -10,7 +10,6 @@
 </head>
 <body>
 <app-root></app-root>
-<button id="sign-in">Sign in with Google</button>
 </body>
 <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
 <script>
@@ -23,17 +22,5 @@
     messagingSenderId: "369571999405"
   };
   firebase.initializeApp(config);
-  document.getElementById('sign-in').addEventListener("click", function() {
-    var provider = new firebase.auth.GoogleAuthProvider();
-    firebase.auth().signInWithPopup(provider).then(function (result) {
-      var token = result.credential.accessToken;
-      var user = result.user;
-    }).catch(function (error) {
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      var email = error.email;
-      var credential = error.credential;
-  });
-    });
 </script>
 </html>
