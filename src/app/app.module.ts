@@ -12,6 +12,8 @@ import {AngularFirestoreModule} from 'angularfire2/firestore';
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import {environment} from '../environments/environment.prod';
 
+import {CourseService} from './services/course.service';
+
 const appRoutes: Routes = [
     {
         path      : '',
@@ -38,7 +40,7 @@ const appRoutes: Routes = [
         AngularFireAuthModule,
         AngularFirestoreModule
     ],
-    providers    : [],
+    providers    : [CourseService],
     bootstrap    : [
         AppComponent
     ]
