@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 
-import {CourseService} from '../services/course.service';
+// import {CourseService} from '../services/course.service';
 
 @Component({
     selector    : 'app-navbar',
@@ -13,15 +13,15 @@ import {CourseService} from '../services/course.service';
 export class NavbarComponent implements OnInit {
 
     constructor(
-        public courseService : CourseService,
+        // public courseService : CourseService,
         public fireAuth: AngularFireAuth
     ) {
     }
 
     ngOnInit() {
-        this.courseService.getCourses().subscribe(courses =>{
-            console.log(courses);
-        });
+        // this.courseService.getCourses().subscribe(courses =>{
+        //     console.log(courses);
+        // });
     }
 
 
