@@ -14,7 +14,7 @@ export class SpeakerService {
       this.speakers = this.afs.collection('speakers').valueChanges();
      }
   
-     getCourses(){
+     getSpeakers(){
        return this.speakers;
      }
 }
