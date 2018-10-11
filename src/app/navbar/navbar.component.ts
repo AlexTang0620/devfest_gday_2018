@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 
-// import {CourseService} from '../services/course.service';
+import {CourseService} from '../services/course.service';
 
 @Component({
     selector    : 'app-navbar',
