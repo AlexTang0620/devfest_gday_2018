@@ -13,7 +13,7 @@ import {CourseService} from '../services/course.service';
 export class NavbarComponent implements OnInit {
 
     constructor(
-        public courseService : CourseService,
+        public courseService: CourseService,
         public fireAuth: AngularFireAuth
     ) {
     }
@@ -29,15 +29,15 @@ export class NavbarComponent implements OnInit {
      * google log in provider
      */
     public googleSignIn() {
-        var provider = new firebase.auth.GoogleAuthProvider();
-        firebase.auth().signInWithPopup(provider).then(function (result) {
-          var user = result.user;
-        }).catch(function (error) {
-          var errorCode = error.code;
-          var errorMessage = error.message;
-          var email = error.email;
-          var credential = error.credential;
-      });
+      //   var provider = new firebase.auth.GoogleAuthProvider();
+      //   firebase.auth().signInWithPopup(provider).then(function (result) {
+      //     var user = result.user;
+      //   }).catch(function (error) {
+      //     var errorCode = error.code;
+      //     var errorMessage = error.message;
+      //     var email = error.email;
+      //     var credential = error.credential;
+      // });
     }
 
 }
