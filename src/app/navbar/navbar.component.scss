@@ -1,10 +1,30 @@
+@import "../../styling/variables";
+
 .devfest-nav {
-  .row {
-    height: 80px;
-  }
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  padding-top: 40px;
 }
 
-.banner{
-  height: 450px;
-  background-image: url("/assets/images/schedule-slider.jpg");
+.navbar-logo {
+  img {
+    max-width: 160px;
+  }
+}
+.navbar-nav {
+  li {
+    font-size: 1.4rem;
+  }
+  li + li {
+    padding-left: 30px;
+  }
+  li.btn-link {
+    padding-left: 20px;
+    .df-btn {
+      margin-top: 0;
+    }
+  }
 }

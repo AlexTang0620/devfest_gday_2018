@@ -1,3 +1,114 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/scss/bootstrap-reboot';
 @import '~bootstrap/scss/bootstrap';
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Google+Sans:300,400,500");
+@import "styling/variables";
+
+html, body {
+  font-family: Google Sans, Roboto, arial, sans-serif;
+  font-size: 62.5%;
+  font-weight: 400;
+  color: $text-color;
+  background: $bg-color;
+}
+
+body {
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: $text-color;
+  text-decoration: none !important;
+}
+h1, h2, h3, h4, h5 {
+  font-weight: 400;
+  margin: 0;
+}
+
+h1 {
+  font-size: 3.6rem;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2.1rem;
+}
+
+h4 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+h5 {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.6rem;
+  line-height: 1.8;
+  margin: 0;
+  & + p {
+    padding-top: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 4.8rem;
+  }
+
+  h2 {
+    font-size: 3.6rem;
+  }
+
+  h3 {
+    font-size: 2.4rem;
+  }
+
+  h4 {
+    font-size: 2.1rem;
+  }
+
+  h5 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1240px;
+  }
+}
+
+
+/*Button*/
+.df-btn {
+  min-width: 110px;
+  margin-top: 20px;
+
+  background: $btn-white;
+  border: 2px solid $btn-white;
+
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: $btn-dark !important;
+
+  @include border-radius(10px);
+  padding: 8px 25px;
+  outline: none !important;
+  @include transition(.2s);
+}
+
+.df-btn-outline {
+  background: none;
+  border: 2px solid $btn-white;
+  color: $btn-white !important;
+}
+

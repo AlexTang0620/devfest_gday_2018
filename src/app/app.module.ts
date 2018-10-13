@@ -14,6 +14,8 @@ import {environment} from '../environments/environment.prod';
 
 import {CourseService} from './services/course.service';
 import {ScheduleComponent} from './schedule/schedule.component';
+import { FooterComponent } from './footer/footer.component';
+import { PartnersComponent } from './partners/partners.component';
 
 const appRoutes: Routes = [
     {
@@ -37,6 +39,8 @@ const appRoutes: Routes = [
         HomepageComponent,
         NavbarComponent,
         ScheduleComponent,
+        FooterComponent,
+        PartnersComponent,
 
     ],
     imports      : [

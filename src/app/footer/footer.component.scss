@@ -1,0 +1,146 @@
+@import "../../styling/variables";
+
+footer {
+  background: #000;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.sns {
+  border-bottom: 1px solid $google-red;
+  margin-bottom: 60px;
+}
+.sns-block {
+  padding-bottom: 30px;
+  .ft-logo {
+    margin: 0;
+    margin-right: 20px;
+  }
+  .sns-link {
+    li {
+      display: inline-block;
+      a {
+        padding: 8px;
+      }
+    }
+  }
+}
+
+.ft-link {
+  .ft-link-block {
+    margin-bottom: 20px;
+    .ft-link-header {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+    a {
+      font-size: 1.4rem;
+      line-height: 24px;
+    }
+  }
+}
+
+@media (min-width: 960px) {
+  .ft-link {
+    .ft-link-block {
+      .ft-link-header {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+.ft-newsletter {
+  .ft-newsletter-header {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+  }
+  .newsletter-input {
+    position: relative;
+    max-width: 400px;
+    .form-control {
+      background: none;
+      border: 1px solid #fff;
+      height: auto;
+      padding: 9px 20px;
+      padding-right: 110px;
+      margin-top: 10px;
+      @include border-radius(10px);
+      overflow: hidden;
+
+      font-size: 1.4rem;
+      line-height: 1.4;
+    }
+    .df-btn {
+      color: #fff !important;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      width: 110px;
+      margin: 0;
+      border: 1px solid transparent;
+      @include border-radius(0 10px 10px 0);
+      background: none;
+
+      &:hover:before {
+        -webkit-animation: slide 20s linear infinite;
+        animation: slide 20s linear infinite;
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: url('/assets/images/pattern-15px.png');
+        opacity: .3;
+      }
+    }
+  }
+}
+
+.ft-copyright {
+  padding-top: 100px;
+  font-size: 1.2rem;
+  & > * {
+    padding-bottom: 30px;
+  }
+  .copyright {
+    flex: 1;
+    padding-right: 100px;
+  }
+  .backtotop {
+    position: relative;
+    & > * {
+      position: relative;
+      z-index: 1;
+      font-size: 1.2rem;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      z-index: 0;
+      bottom: -30px; /*ft-copyright > * padding-bottom*/
+      left: 50%;
+      @include transform(translateX(-50%));
+      padding-top: 210%;
+      width: 440%;
+      background-image: url('/assets/images/backtotop.png');
+      background-repeat: no-repeat;
+      background-position: top center;
+      background-size: contain;
+    }
+  }
+}
+
+@media (min-width: 960px) {
+  .ft-copyright {
+    .copyright {
+      padding-right: 0;
+    }
+  }
+}
