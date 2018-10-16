@@ -4,7 +4,7 @@ import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
 import {HomepageComponent} from './homepage/homepage.component';
 import {RouterModule, Routes} from '@angular/router';
-import {NavbarComponent} from './navbar/navbar.component';
+import {NavbarComponent} from './_layout/navbar/navbar.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import {AngularFireModule} from 'angularfire2';
@@ -14,17 +14,30 @@ import {environment} from '../environments/environment.prod';
 
 import {CourseService} from './services/course.service';
 import {ScheduleComponent} from './schedule/schedule.component';
-import { FooterComponent } from './footer/footer.component';
-import { PartnersComponent } from './partners/partners.component';
+import {FooterComponent} from './_layout/footer/footer.component';
+import {PartnersComponent} from './partners/partners.component';
+import {SiteLayoutComponent} from './_layout/site-layout/site-layout.component';
+import { HomeLayoutComponent } from './_layout/home-layout/home-layout.component';
 
 const appRoutes: Routes = [
     {
         path      : '',
-        component : HomepageComponent
+        component : HomeLayoutComponent,
+        children  : [
+            {
+                path      : '',
+                component : HomepageComponent
+            },
+        ]
     },
     {
-        path      : 'schedule',
-        component : ScheduleComponent
+        path      : '',
+        component : SiteLayoutComponent,
+        children  : [
+            {
+                path : 'schedule', component : ScheduleComponent
+            },
+        ]
     },
     {
         path       : '',
@@ -41,7 +54,8 @@ const appRoutes: Routes = [
         ScheduleComponent,
         FooterComponent,
         PartnersComponent,
-
+        SiteLayoutComponent,
+        HomeLayoutComponent,
     ],
     imports      : [
         BrowserModule,
@@ -51,9 +65,12 @@ const appRoutes: Routes = [
         AngularFireAuthModule,
         AngularFirestoreModule
     ],
-    providers    : [CourseService],
+    providers    : [
+        CourseService
+    ],
     bootstrap    : [
         AppComponent
     ]
 })
+
 export class AppModule {}

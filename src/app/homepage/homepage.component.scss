@@ -412,7 +412,7 @@
       border: 1px solid $btn-dark;
       color: $btn-white !important;
 
-      @include border-radius(5px)
+      @include border-radius(5px);
       padding: 5px 15px;
     }
 

@@ -1,3 +1,18 @@
+@import "../../styling/variables";
+
+.site-banner {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  min-height: 450px;
+  background: $bg-color;
+  background-image: url('/assets/images/schedule-slider.jpg');
+}
+
+//.site-container{
+//  background-color: #fff;
+//}
+
 .dot {
   height: 10px;
   width: 10px;
