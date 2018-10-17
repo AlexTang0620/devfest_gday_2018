@@ -3,10 +3,13 @@
 .home-banner {
   position: relative;
   overflow: hidden;
-  height: 100vh;
-  min-height: 650px;
   background: $bg-color;
+  padding: 150px 0 50px;
 
+  .banner-content {
+    position: relative;
+    z-index: 1;
+  }
   h1 {
     font-size: 6rem;
     margin-bottom: 10px;
@@ -54,6 +57,13 @@
     }
   }
 }
+@media (min-width: 960px) {
+  .home-banner {
+    height: 100vh;
+    min-height: 650px;
+    padding: 0;
+  }
+}
 
 .home-section {
   padding: 60px 0;
@@ -64,11 +74,19 @@
 
 .shape {
   position: absolute;
+  z-index: 0;
+  opacity: 0.6;
   img {
     width: 100%;
+    -webkit-animation-duration: 6s;
+    animation-duration: 6s;
+    -webkit-animation-name: bounceIn6s;
+    animation-name: bounceIn6s;
+    animation-iteration-count: infinite;
   }
   &:hover {
     img {
+      @include animation-delay(0s);
       -webkit-animation-duration: 0.75s;
       animation-duration: 0.75s;
       -webkit-animation-name: bounceIn;
@@ -86,31 +104,54 @@
   width: 10.13%;
   top: 0%;
   left: 74.5%;
+  img {
+    @include animation-delay(4.71s);
+  }
 }
 .shape-3 {
   width: 21.73%;
   top: 9.55%;
   left: 83.125%;
+  img {
+    @include animation-delay(7.7s);
+  }
 }
 .shape-4 {
   width: 5.76%;
   top: 30.44%;
   left: 63.61%;
+  img {
+    @include animation-delay(3.4s);
+  }
 }
 .shape-5 {
   width: 17.638%;
   top: 58.55%;
   left: 53.54%;
+  img {
+    @include animation-delay(8.5s);
+  }
 }
 .shape-6 {
   width: 12.29%;
   bottom: 18.5%;
   left: 82.22%;
+  img {
+    @include animation-delay(2.3s);
+  }
 }
 .shape-7 {
   width: 8.26%;
   bottom: 17.6%;
   left: 31.18%;
+  img {
+    @include animation-delay(5.74s);
+  }
+}
+@media (min-width: 768px) {
+  .shape {
+    opacity: 1;
+  }
 }
 
 .home-intro {
