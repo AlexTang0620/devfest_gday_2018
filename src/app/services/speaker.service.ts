@@ -1,20 +1,30 @@
-import { Injectable } from '@angular/core';
-import  {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from 'angularfire2/firestore';
-import  {Observable} from 'rxjs';
-import  {Speaker} from '../models/Speaker';
+import {Injectable} from '@angular/core';
+import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from 'angularfire2/firestore';
+import {Observable} from 'rxjs';
+import {Speaker} from '../models/Speaker';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn : 'root'
 })
+
 export class SpeakerService {
-  SpeakerCollection : AngularFirestoreCollection<Speaker>;
-  speakers : Observable<Speaker[]>;
-    
-    constructor(public afs : AngularFirestore) {
-      this.speakers = this.afs.collection('speakers').valueChanges();
-     }
-  
-     getSpeakers(){
-       return this.speakers;
-     }
+    private speakerCollection: AngularFirestoreCollection<Speaker>;
+    speakers: Observable<Speaker[]>;
+
+    constructor(
+        public fireStore: AngularFirestore
+    ) {
+        this.speakerCollection = this.fireStore.collection('speakers');
+        this.speakers = this.speakerCollection.valueChanges();
+    }
+
+    get() {
+        return this.speakers;
+    }
+
+    getRockStarSpeaker(){
+        return this.fireStore.collection<Speaker>('speakers', ref =>
+            ref.limit(4)
+        ).valueChanges();
+    }
 }

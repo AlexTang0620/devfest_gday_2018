@@ -5,6 +5,8 @@
 @import url("https://fonts.googleapis.com/css?family=Google+Sans:300,400,500");
 @import "styling/variables";
 
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
 html, body {
   font-family: Google Sans, Roboto, arial, sans-serif;
   font-size: 62.5%;

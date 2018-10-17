@@ -17,7 +17,9 @@ import {ScheduleComponent} from './schedule/schedule.component';
 import {FooterComponent} from './_layout/footer/footer.component';
 import {PartnersComponent} from './partners/partners.component';
 import {SiteLayoutComponent} from './_layout/site-layout/site-layout.component';
-import { HomeLayoutComponent } from './_layout/home-layout/home-layout.component';
+import {HomeLayoutComponent} from './_layout/home-layout/home-layout.component';
+import {SpeakerDialogComponent} from './_dialog/speaker-dialog/speaker-dialog.component';
+import {MatDialogModule} from "@angular/material";
 
 const appRoutes: Routes = [
     {
@@ -47,7 +49,7 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-    declarations : [
+    declarations    : [
         AppComponent,
         HomepageComponent,
         NavbarComponent,
@@ -56,19 +58,27 @@ const appRoutes: Routes = [
         PartnersComponent,
         SiteLayoutComponent,
         HomeLayoutComponent,
+        SpeakerDialogComponent,
     ],
-    imports      : [
+    exports         : [
+        MatDialogModule
+    ],
+    entryComponents : [
+        SpeakerDialogComponent
+    ],
+    imports         : [
         BrowserModule,
         RouterModule.forRoot(appRoutes),
         BrowserAnimationsModule,
         AngularFireModule.initializeApp(environment.firebase),
         AngularFireAuthModule,
-        AngularFirestoreModule
+        AngularFirestoreModule,
+        BrowserAnimationsModule
     ],
-    providers    : [
+    providers       : [
         CourseService
     ],
-    bootstrap    : [
+    bootstrap       : [
         AppComponent
     ]
 })
