@@ -1,0 +1,57 @@
+.speaker-img {
+  border-radius: 50%;
+  width: 50px;
+}
+
+.speaker-info {
+  display: flex;
+  flex-wrap: nowrap;
+  span {
+    font-size: 14px;
+    color: #757575;
+  }
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot-red {
+  background-color: #d62d20;
+}
+
+.dot-yellow {
+  background-color: #ffa700;
+}
+
+.dot-purple {
+  background-color: #cb95c3;
+}
+
+.dot-blue {
+  background-color: #4690cd;
+}
+
+.dot-light-purple {
+  background-color: #abb4d1;
+}
+
+.dot-green {
+  background-color: #008744;
+}
+
+.title {
+  font-size: 12px;
+  color: #212529;
+}
+
+.bg-pattern {
+  background-image: url('/assets/images/popup-bg.png');
+}
+
+h5 {
+  color: #4985d0;
+}
