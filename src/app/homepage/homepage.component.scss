@@ -233,8 +233,7 @@
   .home-speakers-list {
     padding-top: 50px;
   }
-  .home-speakers-item {
-    margin-bottom: 50px;
+  .speakers-item{
     &:nth-child(1) .profile-image {
       border: 5px solid $google-yellow;
     }
@@ -247,26 +246,6 @@
     &:nth-child(4) .profile-image {
       border: 5px solid $google-red;
     }
-  }
-  .profile-image {
-    width: 100%;
-    max-width: 170px;
-    margin: 0 auto 40px;
-    @include border-radius(50%);
-    overflow: hidden;
-
-    figure {
-      width: 100%;
-      margin: 0;
-      padding-top: 100%;
-
-      background-size: cover;
-      background-position: center center;
-      background-repeat: no-repeat;
-    }
-  }
-  p {
-    font-size: 1.4rem;
   }
 }
 

@@ -14,6 +14,7 @@ import {environment} from '../environments/environment.prod';
 
 import {CourseService} from './services/course.service';
 import {ScheduleComponent} from './schedule/schedule.component';
+import {SpeakersComponent} from './speakers/speakers.component';
 import {FooterComponent} from './_layout/footer/footer.component';
 import {PartnersComponent} from './partners/partners.component';
 import {SiteLayoutComponent} from './_layout/site-layout/site-layout.component';
@@ -42,6 +43,15 @@ const appRoutes: Routes = [
         ]
     },
     {
+        path      : '',
+        component : SiteLayoutComponent,
+        children  : [
+            {
+                path : 'speakers', component : SpeakersComponent
+            },
+        ]
+    },
+    {
         path       : '',
         pathMatch  : 'full',
         redirectTo : ''
@@ -54,6 +64,7 @@ const appRoutes: Routes = [
         HomepageComponent,
         NavbarComponent,
         ScheduleComponent,
+        SpeakersComponent,
         FooterComponent,
         PartnersComponent,
         SiteLayoutComponent,
