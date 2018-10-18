@@ -1,19 +1,39 @@
 <div class="bg-pattern">
     <!--<h2 mat-dialog-title>{{data.name}}</h2>-->
-    <div class="speaker-name pb-3">
-      <div class="speaker-info">
-        <img src="https://dummyimage.com/50x50/bababa/fff" alt="img" class="speaker-img">
-        <h5 mat-dialog-title class="align-self-center mb-0 pl-4">{{data.name}} <br> <span>{{data.background}}</span></h5>
-      </div>
+    <div class="dialog-header">
+        <div class="dialog-container d-flex align-items-center">
+            <div class="profile-image">
+                <figure style="background-image: url('https://via.placeholder.com/250x250')"></figure>
+            </div>
+            <div class="header-title">
+                <h3 mat-dialog-title>{{data.name}}</h3>
+                <span>{{data.background}}</span>
+            </div>
+        </div>
     </div>
 
-    <hr class="w-100">
-
-    <div mat-dialog-content class="mt-3">
-      <p class="pt-3">10:00AM - 10:45AM, Hall A (JC 1)</p>
-      <p class="title"><span class="dot dot-purple"></span> Machine Learning</p>
-      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
-      <p>Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim
-      justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. </p>
+    <div mat-dialog-content class="dialog-content">
+      <div class="dialog-container">
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
+          <p>Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim
+              justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.</p>
+          <div class="ref">
+              <h5>Sessions</h5>
+              <div class="ref-item">
+                  <div class="title">The Modern Web: State of the Union</div>
+                  <div class="schedule-meta d-flex">
+                      <div class="hrs">1 Hrs / Hall 1</div>
+                      <div class="tag"><span class="dot dot-red"></span><span>Pwa</span></div>
+                  </div>
+              </div> <!-- .ref-item end -->
+              <div class="ref-item">
+                  <div class="title">How to make your web faster</div>
+                  <div class="schedule-meta d-flex">
+                      <div class="hrs">1 Hrs / Hall 1</div>
+                      <div class="tag"><span class="dot dot-blue"></span><span>Web</span></div>
+                  </div>
+              </div> <!-- .ref-item end -->
+          </div>
+      </div>
     </div>
 </div>
