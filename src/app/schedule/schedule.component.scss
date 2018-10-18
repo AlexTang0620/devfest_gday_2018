@@ -1,104 +1,73 @@
 @import "../../styling/variables";
 
-.site-banner {
-  position: relative;
-  overflow: hidden;
-  min-height: 300px;
-  background: $bg-color;
-  background-image: url('/assets/images/schedule-slider.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+.schedule-wrapper {
+  background: #fff;
+  color: #161845;
 }
-
 .schedule {
   flex: 1;
+  h4 {
+    margin: 0 0 10px;
+  }
 }
-
-.dot {
-  height: 10px;
-  width: 10px;
-  border-radius: 50%;
-  display: inline-block;
+.schedule-time {
+  text-align: right;
+  padding: 30px;
+  padding-left: 0;
+  width: 100px;
+  span {
+    display: block;
+    line-height: 1;
+    &.hours {
+      font-size: 3.6rem;
+    }
+    &.minutes {
+      font-size: 2.4rem;
+      color: #4e507c;
+    }
+  }
 }
-
-.dot-red {
-  background-color: #d62d20;
+@media (min-width: 768px) {
+  .schedule-time {
+    width: 120px;
+  }
 }
-
-.dot-yellow {
-  background-color: #ffa700;
-}
-
-.dot-purple {
-  background-color: #cb95c3;
-}
-
-.dot-blue {
-  background-color: #4690cd;
-}
-
-.dot-light-purple {
-  background-color: #abb4d1;
-}
-
-.dot-green {
-  background-color: #008744;
-}
-
 .site-container {
   background: #fff;
   h1, h2, h3, h4, h5, h6, p {
   color: #161845;
   }
 }
-
-.border-right {
-  border-right: 1px solid #dee2e6 !important;
-}
-
-.time-w {
-  width: 77px;
-  padding-top: 5px;
-}
-
-.schedule {
-  flex: 1;
-}
-
-.speaker-img {
-  border-radius: 50%;
-  width: 50px;
-}
-
-.speaker-info {
-  display: flex;
-  flex-wrap: nowrap;
-  span {
-    align-self: center;
-    font-size: 12px;
-    color: #6d6d6d;
-  }
-}
-
-.hrs, .title {
-  font-size: 12px;
-  color: #212529;
-}
-
-.slot:hover {
-  background: #f5f5f5;
-  cursor: pointer;
-}
-
-.slot {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.speaker-name {
-  align-self: flex-end;
-}
-
-.title-name {
-  height: 70vh;
-}
+//
+//.border-right {
+//  border-right: 1px solid #dee2e6 !important;
+//}
+//
+//.time-w {
+//  width: 77px;
+//  padding-top: 5px;
+//}
+//
+//.hrs, .title {
+//  font-size: 12px;
+//  color: #212529;
+//}
+//
+//.slot:hover {
+//  background: #f5f5f5;
+//  cursor: pointer;
+//}
+//
+//.slot {
+//  //display: flex;
+//  //flex-wrap: wrap;
+//
+//}
+//
+//.speaker-name {
+//  align-self: flex-end;
+//}
+//
+//.title-name {
+//  height: 70vh;
+//}
