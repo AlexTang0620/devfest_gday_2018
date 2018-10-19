@@ -17,6 +17,10 @@ export class CourseService {
     getCourses() {
         return this.courses;
     }
+
+    getCourse(course){
+        return this.afs.doc<Course>(course).valueChanges();
+    }
 }
 
 
