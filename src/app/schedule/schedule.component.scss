@@ -10,6 +10,26 @@
     margin: 0 0 10px;
   }
 }
+
+.profile-image {
+  width: 100%;
+  max-width: 40px;
+  margin: 0 15px 0 0;
+  @include border-radius(50%);
+  overflow: hidden;
+
+  figure {
+    width: 100%;
+    margin: 0;
+    padding-top: 100%;
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+}
+
+
 .schedule-time {
   text-align: right;
   padding: 30px;

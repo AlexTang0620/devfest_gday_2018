@@ -1,8 +1,8 @@
 export interface Course {
-    id?: string;
-    name?: string;
-    length?: string;
-    session?: string;
+    id: string;
+    name: string;
+    length: string;
     type?: string;
-    speaker?: string;
+    description?: string;
+    speaker?: any;
 }

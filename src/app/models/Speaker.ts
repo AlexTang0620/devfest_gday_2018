@@ -3,7 +3,10 @@ export interface Speaker {
     name: string;
     title: string;
     bio: string;
+    short_bio: string;
+    background: string;
     from: string;
+    photo_url: string;
     // profile_url: string;
     // background: string;
 }
