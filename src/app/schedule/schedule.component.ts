@@ -3,6 +3,8 @@ import {MatDialog} from "@angular/material";
 import {Schedule} from "../models/Schedule";
 import {ScheduleService} from "../services/schedule.service";
 import {Course} from "../models/Course";
+import {SpeakerDialogComponent} from "../_dialog/speaker-dialog/speaker-dialog.component";
+import {ScheduleDialogComponent} from "../_dialog/schedule-dialog/schedule-dialog.component";
 
 @Component({
     selector    : 'app-schedule',
@@ -12,16 +14,25 @@ import {Course} from "../models/Course";
 export class ScheduleComponent implements OnInit {
     schedule: any;
 
+    ngOnInit() {
+    }
+
     constructor(
         public dialog: MatDialog,
         public scheduleService: ScheduleService
     ) {
-        this.scheduleService.get().subscribe(schedule => {
-            this.schedule = schedule
-        });
+        this.schedule = this.scheduleService.get();
     }
 
-    ngOnInit() {
+    showScheduleDialog(course) {
+        course.subscribe(c => {
+            console.log(c);
+        })
+        // // console.log(course.get())
+        // this.dialog.open(ScheduleDialogComponent, {
+        //     width : '700px',
+        //     data  : course
+        // });
     }
 
 }

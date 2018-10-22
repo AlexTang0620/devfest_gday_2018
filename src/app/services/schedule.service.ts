@@ -6,6 +6,7 @@ import {Schedule} from '../models/Schedule';
 import {Observable} from 'rxjs';
 import {CourseService} from './course.service';
 import {map} from 'rxjs/operators';
+import {Course} from "../models/Course";
 
 
 @Injectable({
@@ -13,7 +14,6 @@ import {map} from 'rxjs/operators';
 })
 export class ScheduleService {
     private scheduleCollection: AngularFirestoreCollection<Schedule>;
-    schedules: Observable<Schedule[]>;
 
     constructor(
         public fireStore: AngularFirestore,
@@ -30,8 +30,8 @@ export class ScheduleService {
                     const scheduleData: Schedule = schedule.payload.doc.data();
                     const id = schedule.payload.doc.id;
 
-                    scheduleData.courses = scheduleData.courses
-                        .map(course => this.courseService.getCourse(course.path));
+                    scheduleData.courses =
+                        scheduleData.courses.map(course => this.courseService.getCourse(course));
 
                     return {id, ...scheduleData};
                 }))

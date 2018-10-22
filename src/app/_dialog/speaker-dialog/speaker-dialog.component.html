@@ -1,39 +1,20 @@
 <div class="bg-pattern">
-    <!--<h2 mat-dialog-title>{{data.name}}</h2>-->
-    <div class="dialog-header">
-        <div class="dialog-container d-flex align-items-center">
-            <div class="profile-image">
-                <figure style="background-image: url('https://via.placeholder.com/250x250')"></figure>
-            </div>
-            <div class="header-title">
-                <h3 mat-dialog-title>{{data.name}}</h3>
-                <span>{{data.background}}</span>
-            </div>
-        </div>
-    </div>
-
-    <div mat-dialog-content class="dialog-content">
-      <div class="dialog-container">
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
-          <p>Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim
-              justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.</p>
-          <div class="ref">
-              <h5>Sessions</h5>
-              <div class="ref-item">
-                  <div class="title">The Modern Web: State of the Union</div>
-                  <div class="schedule-meta d-flex">
-                      <div class="hrs">1 Hrs / Hall 1</div>
-                      <div class="tag"><span class="dot dot-red"></span><span>Pwa</span></div>
-                  </div>
-              </div> <!-- .ref-item end -->
-              <div class="ref-item">
-                  <div class="title">How to make your web faster</div>
-                  <div class="schedule-meta d-flex">
-                      <div class="hrs">1 Hrs / Hall 1</div>
-                      <div class="tag"><span class="dot dot-blue"></span><span>Web</span></div>
-                  </div>
-              </div> <!-- .ref-item end -->
-          </div>
+  <div class="dialog-header">
+    <div class="dialog-container d-flex align-items-center">
+      <div class="profile-image">
+        <figure [ngStyle]="{ 'background-image': 'url(../assets/images/speakers/' + data.photo_url + ')'}"></figure>
+      </div>
+      <div class="header-title">
+        <h3 mat-dialog-title>{{data.name}}</h3>
+        <span>{{data.title}}</span>
       </div>
     </div>
+  </div>
+
+  <div mat-dialog-content class="dialog-content">
+    <div class="dialog-container">
+      <h5>{{data.background}}</h5>
+      <p>{{data.bio}}</p>
+    </div>
+  </div>
 </div>

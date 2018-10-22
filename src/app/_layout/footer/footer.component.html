@@ -7,8 +7,12 @@
           <div class="sns-link">
             <ul class="list-unstyled m-0">
               <!--<li><a href=""><img src="../assets/images/ft-icon-google.svg" alt=""></a></li>-->
-              <li><a href="https://www.facebook.com/gdggeorgetown/"><img src="../assets/images/ft-icon-facebook.svg" alt=""></a></li>
-              <li><a href=""><img src="../assets/images/ft-icon-mail.svg" alt=""></a></li>
+              <li>
+                <a href="https://www.facebook.com/gdggeorgetown/" target="_blank">
+                  <img src="../assets/images/ft-icon-facebook.svg" alt="">
+                </a>
+              </li>
+              <!--<li><a href=""><img src="../assets/images/ft-icon-mail.svg" alt=""></a></li>-->
             </ul>
           </div>
         </div> <!-- .sns-block end -->
@@ -16,8 +20,12 @@
           <figure class="ft-logo"><img src="../assets/images/ft-gbg.svg" alt=""></figure>
           <div class="sns-link">
             <ul class="list-unstyled m-0">
-              <li><a href="https://www.facebook.com/gbggeorgetown"><img src="../assets/images/ft-icon-facebook.svg" alt=""></a></li>
-              <li><a href=""><img src="../assets/images/ft-icon-mail.svg" alt=""></a></li>
+              <li>
+                <a target="_blank" href="https://www.facebook.com/gbggeorgetown">
+                  <img src="../assets/images/ft-icon-facebook.svg" alt="">
+                </a>
+              </li>
+              <!--<li><a href=""><img src="../assets/images/ft-icon-mail.svg" alt=""></a></li>-->
             </ul>
           </div>
         </div> <!-- .sns-block end -->
@@ -33,10 +41,10 @@
                 Explore Past DevFests
               </div>
               <ul class="list-unstyled">
-                <li><a href="http://devfest2014.gdggeorgetown.com/">GDG DevFest GeorgeTown 2014</a></li>
-                <li><a href="http://devfest2015.gdggeorgetown.com/">GDG DevFest GeorgeTown 2015</a></li>
-                <li><a href="http://devfest2016.gdggeorgetown.com/">GDG DevFest GeorgeTown 2016</a></li>
-                <li><a href="http://devfest2017.gdggeorgetown.com/">GDG DevFest GeorgeTown 2017</a></li>
+                <li><a target="_blank" href="http://devfest2014.gdggeorgetown.com/">GDG DevFest GeorgeTown 2014</a></li>
+                <li><a target="_blank" href="http://devfest2015.gdggeorgetown.com/">GDG DevFest GeorgeTown 2015</a></li>
+                <li><a target="_blank" href="http://devfest2016.gdggeorgetown.com/">GDG DevFest GeorgeTown 2016</a></li>
+                <li><a target="_blank" href="http://devfest2017.gdggeorgetown.com/">GDG DevFest GeorgeTown 2017</a></li>
               </ul>
             </div> <!-- .ft-link-block end -->
             <div class="col-12 col-lg ft-link-block">
@@ -44,20 +52,20 @@
                 For Visitors
               </div>
               <ul class="list-unstyled">
-                <li><a href="">Schedule</a></li>
-                <li><a href="">Speakers</a></li>
-                <li><a href="">Attending</a></li>
-                <li><a href="">Decks</a></li>
+                <li><a routerLink="/schedule" routerLinkActive="active">Schedule</a></li>
+                <li><a routerLink="/speakers" routerLinkActive="active">Speakers</a></li>
+                <!--<li><a href="">Attending</a></li>-->
+                <!--<li><a href="">Decks</a></li>-->
               </ul>
             </div> <!-- .ft-link-block end -->
           </div>
         </div> <!-- .ft-link end -->
         <div class="col-12 col-md ft-newsletter">
-          <div class="ft-newsletter-header">No spam, only the latest news and updates!</div>
-          <div class="newsletter-input">
-            <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Your email" required>
-            <button class="btn df-btn">Subscribe</button>
-          </div>
+          <!--<div class="ft-newsletter-header">No spam, only the latest news and updates!</div>-->
+          <!--<div class="newsletter-input">-->
+          <!--<input type="email" id="inputEmail" name="email" class="form-control" placeholder="Your email" required>-->
+          <!--<button class="btn df-btn">Subscribe</button>-->
+          <!--</div>-->
         </div> <!-- .ft-newsletter end -->
       </div>
     </div> <!-- ft-nav end -->
@@ -66,7 +74,7 @@
       <div class="d-flex align-items-end justify-content-between">
         <div class="copyright">© 2018. GDG DevFest + Gday is a community event that offer sessions & code labs across different Google Developer platforms, product APIs & open source technologies.
         </div>
-        <div class="backtotop">
+        <div class="backtotop" (click)="backToTop($event)" >
           <p>Back to top</p>
         </div>
       </div>

@@ -5,7 +5,7 @@
 </div>
 
 <div class="container-fluid site-container schedule-wrapper">
-  <div class="row schedule-section" *ngFor="let data of schedule">
+  <div class="row schedule-section" *ngFor="let data of schedule | async">
     <div class="schedule-time">
       <span class="hours">{{data.id.substring(0, 2)}}</span>
       <span class="minutes">{{data.id.substring(2)}}</span>
@@ -17,16 +17,17 @@
         <div class="schedule-details">
           <h4>{{ (course | async)?.name }}</h4>
           <div class="schedule-meta d-flex d-lg-block flex-wrap">
-            <div class="hrs">{{(course | async)?.length}} / Registration Area</div>
+            <div class="hrs">{{(course | async)?.length}} / {{(course | async)?.classroom}}</div>
             <div class="tag">
-              <!--<span class="dot dot-red"></span>-->
               <span>{{ (course | async)?.type }}</span>
             </div>
           </div>
         </div>
-        <div class="speaker-info d-flex align-items-center">
-          <figure><img src="https://dummyimage.com/50x50/bababa/fff" alt="img"></figure>
-          <span>Vin Lim</span>
+        <div class="speaker-info d-flex align-items-center" *ngIf="(course | async)?.speaker != 'N/A' || ((course | async)?.speaker | async) != null">
+          <div class="profile-image">
+            <figure [ngStyle]="{ 'background-image': 'url(../assets/images/speakers/' + ((course | async)?.speaker | async)?.photo_url + ')'}"></figure>
+          </div>
+          <span>{{((course | async)?.speaker | async)?.name}}</span>
         </div>
       </div>
     </div>
