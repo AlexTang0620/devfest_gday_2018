@@ -13,11 +13,11 @@
 
     <div class="schedule row m-0">
       <div class="slot col-12 col-lg d-flex flex-wrap align-content-between"
-           *ngFor="let course of data.courses" (click)="showScheduleDialog(course)">
+           *ngFor="let course of data.courses">
         <div class="schedule-details">
           <h4>{{ (course | async)?.name }}</h4>
           <div class="schedule-meta d-flex d-lg-block flex-wrap">
-            <div class="hrs">{{(course | async)?.length}} / Registration Area</div>
+            <div class="hrs">{{(course | async)?.length}} / {{(course | async)?.classroom}}</div>
             <div class="tag">
               <span>{{ (course | async)?.type }}</span>
             </div>

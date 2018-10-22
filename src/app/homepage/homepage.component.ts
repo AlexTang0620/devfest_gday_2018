@@ -25,8 +25,7 @@ export class HomepageComponent implements OnInit {
         const dialogRef = this.dialog.open(SpeakerDialogComponent, {
             width : '700px',
             data  : {
-                name       : speaker.name,
-                background : speaker.background
+                ...speaker
             }
         });
 
