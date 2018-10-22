@@ -35,7 +35,7 @@ export class SpeakerService {
 
     getRockStarSpeaker() {
         return this.fireStore.collection<Speaker>('speakers', ref =>
-            ref.limit(4)
+            ref.where('featured', '==', true)
         ).valueChanges();
     }
 
