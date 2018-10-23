@@ -18,8 +18,8 @@
           <h4>{{ (course | async)?.name }}</h4>
           <div class="schedule-meta d-flex d-lg-block flex-wrap">
             <div class="hrs">{{(course | async)?.length}} / {{(course | async)?.classroom}}</div>
-            <div class="tag">
-              <span>{{ (course | async)?.type }}</span>
+            <div class="tag" *ngIf="(course | async)?.type as type">
+              <span>[{{ type }}]</span>
             </div>
           </div>
         </div>
