@@ -12,6 +12,6 @@ export class ScheduleDialogComponent {
     constructor(
         @Inject(MAT_DIALOG_DATA) public data: Course
     ) {
-        console.log(this.data)
+
     }
 }

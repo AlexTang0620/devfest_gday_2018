@@ -9,8 +9,11 @@ import {Speaker} from "../../models/Speaker";
 })
 
 export class SpeakerDialogComponent {
+    public htmlBio: any;
+
     constructor(
         @Inject(MAT_DIALOG_DATA) public data: Speaker
     ) {
+        this.htmlBio = data.bio.replace(new RegExp('/bb', 'g'), '\n');
     }
 }

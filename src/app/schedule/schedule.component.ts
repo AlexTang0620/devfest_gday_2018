@@ -25,9 +25,9 @@ export class ScheduleComponent implements OnInit {
     }
 
     showScheduleDialog(course) {
-        course.subscribe(c => {
-            console.log(c);
-        })
+        // course.subscribe(c => {
+        //     console.log(c);
+        // })
         // // console.log(course.get())
         // this.dialog.open(ScheduleDialogComponent, {
         //     width : '700px',

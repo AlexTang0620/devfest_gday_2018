@@ -25,7 +25,6 @@ export class SpeakerService {
             .pipe(
                 map(speaker => speaker.map(speaker => {
                     const speakerData: Speaker = speaker.payload.doc.data();
-                    console.log(speakerData);
                     const id = speaker.payload.doc.id;
 
                     return {id, ...speakerData};
