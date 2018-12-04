@@ -21,6 +21,7 @@ import {SiteLayoutComponent} from './_layout/site-layout/site-layout.component';
 import {HomeLayoutComponent} from './_layout/home-layout/home-layout.component';
 import {SpeakerDialogComponent} from './_dialog/speaker-dialog/speaker-dialog.component';
 import {MatDialogModule} from "@angular/material";
+import {AttendingComponent} from './attending/attending.component';
 
 const appRoutes: Routes = [
     {
@@ -70,6 +71,7 @@ const appRoutes: Routes = [
         SiteLayoutComponent,
         HomeLayoutComponent,
         SpeakerDialogComponent,
+        AttendingComponent,
     ],
     exports         : [
         MatDialogModule
