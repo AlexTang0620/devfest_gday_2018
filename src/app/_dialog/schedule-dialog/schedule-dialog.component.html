@@ -1,0 +1,15 @@
+<div class="bg-pattern">
+  <div class="dialog-header">
+    <div class="dialog-container d-flex align-items-center">
+      <div class="header-title">
+        <h3 mat-dialog-title>{{(data | async)?.name}}</h3>
+      </div>
+    </div>
+  </div>
+
+  <div mat-dialog-content class="dialog-content">
+    <div class="dialog-container">
+      <p>{{(data | async)?.description}}</p>
+    </div>
+  </div>
+</div>

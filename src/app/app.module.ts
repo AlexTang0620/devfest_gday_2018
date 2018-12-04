@@ -22,6 +22,7 @@ import {HomeLayoutComponent} from './_layout/home-layout/home-layout.component';
 import {SpeakerDialogComponent} from './_dialog/speaker-dialog/speaker-dialog.component';
 import {MatDialogModule} from "@angular/material";
 import {AttendingComponent} from './attending/attending.component';
+import { ScheduleDialogComponent } from './_dialog/schedule-dialog/schedule-dialog.component';
 
 const appRoutes: Routes = [
     {
@@ -39,16 +40,12 @@ const appRoutes: Routes = [
         component : SiteLayoutComponent,
         children  : [
             {
-                path : 'schedule', component : ScheduleComponent
+                path : 'schedule',
+                component : ScheduleComponent
             },
-        ]
-    },
-    {
-        path      : '',
-        component : SiteLayoutComponent,
-        children  : [
             {
-                path : 'speakers', component : SpeakersComponent
+                path : 'speakers',
+                component : SpeakersComponent
             },
         ]
     },
@@ -72,12 +69,14 @@ const appRoutes: Routes = [
         HomeLayoutComponent,
         SpeakerDialogComponent,
         AttendingComponent,
+        ScheduleDialogComponent,
     ],
     exports         : [
         MatDialogModule
     ],
     entryComponents : [
-        SpeakerDialogComponent
+        SpeakerDialogComponent,
+        ScheduleDialogComponent
     ],
     imports         : [
         BrowserModule,

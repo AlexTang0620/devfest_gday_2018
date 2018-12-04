@@ -1,10 +1,16 @@
 <div class="home-banner banner d-flex justify-content-start align-items-center">
   <div class="container">
     <div class="banner-content">
-      <h1>DevFest & BizFest 2018</h1>
-      <p>George Town, December 1st, 2018</p>
-      <div class="btn-wrapper d-inline-block"><a href="" class="btn df-btn d-flex align-items-center">Get Your Ticket Now <span class="d-flex align-items-center"><img
-              src="../assets/images/icon-arrow.svg" alt=""></span></a></div>
+      <h1>DevFest + BizFest 2018</h1>
+      <p>George Town, December 8th, 2018</p>
+      <div class="btn-wrapper d-inline-block">
+        <a href="https://www.eventbrite.com/e/devfest-bizfest-george-town-2018-tickets-50944022944?aff=website"
+           target="_blank"
+           class="btn df-btn d-flex align-items-center">Get Your Ticket Now
+          <span class="d-flex align-items-center">
+          <img src="../assets/images/icon-arrow.svg" alt=""></span>
+        </a>
+      </div>
     </div>
 
     <div class="shape shape-1"><img src="../assets/images/shape-1.svg" alt=""></div>
@@ -36,7 +42,7 @@
           <p>Day</p>
         </div>
         <div class="item">
-          <h1>25</h1>
+          <h1>30</h1>
           <p>Sessions</p>
         </div>
         <div class="item">
@@ -58,20 +64,22 @@
       <div class="row">
         <div class="col-6 col-lg-3 speakers-item"
              (click)="showDialog(speaker)"
-             *ngFor="let speaker of speakers"
-        >
+             *ngFor="let speaker of speakers">
           <div class="speakers-item--inner">
             <div class="profile-image">
-              <figure style="background-image: url('https://via.placeholder.com/250x250')"></figure>
+              <figure [ngStyle]="{ 'background-image': 'url(../assets/images/speakers/' + speaker.photo_url + ')'}"></figure>
+              <!--<figure style="background-image: url('https://via.placeholder.com/250x250')"></figure>-->
             </div>
             <h3>{{speaker.name}}</h3>
-            <p>{{speaker.background}}</p>
+            <p>{{speaker.title}}</p>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="btn df-btn df-btn-outline">See All Speakers</div>
+      <button class="btn df-btn df-btn-outline" routerLink="/speakers" routerLinkActive="active" style="position: relative;">
+        View all speaker
+      </button>
+    </div>
   </div>
 </div>
 
@@ -82,29 +90,37 @@
         <div class="col-12 col-lg-5 d-lg-flex flex-lg-wrap">
           <h2 class="align-self-lg-center"><span>#</span><span>DevFest</span><span>GDay</span><span>Highlights</span></h2>
           <div class="media-item align-self-lg-end">
-            <figure></figure>
+            <a href="https://www.youtube.com/watch?v=M8kH8-OcZaM&t=2s" target="_blank">
+              <figure class="img-2017"></figure>
+            </a>
           </div>
         </div>
         <div class="col-12 col-lg-7">
           <div class="row">
             <div class="col-6">
               <div class="media-item">
-                <figure></figure>
+                <a href="https://www.youtube.com/watch?v=keWI-LxNFRk&t=10s" target="_blank">
+                  <figure class="img-2016"></figure>
+                </a>
               </div>
             </div>
             <div class="col-6">
               <div class="media-item">
-                <figure></figure>
+                <a href="https://www.youtube.com/watch?v=8R3qJ1wWjzY" target="_blank">
+                  <figure class="img-2015"></figure>
+                </a>
               </div>
             </div>
             <div class="col-6">
               <div class="media-item">
-                <figure></figure>
+                <a href="https://www.youtube.com/watch?v=hTCPhmmRtSQ&t=5s" target="_blank">
+                  <figure class="img-2014"></figure>
+                </a>
               </div>
             </div>
             <div class="col-6">
-              <div class="media-item">
-                <figure></figure>
+              <div class="pattern">
+                <figure class="img-2013"></figure>
               </div>
             </div>
           </div>
@@ -116,6 +132,10 @@
         <div class="col-12 col-md-3 title"><h2>Organizer</h2></div>
         <div class="col-12 col-md description">
           <p>
+            Come join in the fun with hundreds of tech enthusiasts and business professionals in our annual most epic dev and biz conference up north.
+
+            In this one day conference, we cover six tracks filled with over 25 talks and workshops by speakers from local and abroad.
+
             Due of last year of amazing support from all you guy we decide to maintain the awesomeness which
             mean we are continue bringing the 2 biggest flagship events powered by Google to you!<br><br>
 
@@ -123,7 +143,7 @@
             students, startups and anyone interested to learn the latest trends and technical knowledge of
             Google platform, product APIs & open source technologies.<br><br>
 
-            GDays is the annual conference that aims to bring together professionals, business owners,
+            BizFest is the annual conference that aims to bring together professionals, business owners,
             entrepreneurs, startups, programmers and students to learn and share insights on innovations for
             the future. Participants will learn about how innovations have helped startups, businesses,
             communities achieve greater impact.<br><br>
@@ -173,11 +193,13 @@
         <div class="content">
           <div class="ticket-type">Early Bird</div>
           <div class="type-description">
-            1 Nov - 15 Nov<br>
-            Or first 200 tickets
+            22 Oct - 11 Nov<br>
+            Or first 300 tickets
           </div>
-          <div class="ticket-price">Free</div>
-          <a class="btn df-btn">Get Ticket</a>
+          <div class="ticket-price">RM 5</div>
+          <a href="https://www.eventbrite.com/e/devfest-bizfest-george-town-2018-tickets-50944022944?aff=rm5link"
+             target="_blank"
+             class="btn df-btn">Get Ticket</a>
         </div>
         <div class="benefits">
           <div><span>Complimentary Lunch</span></div>
@@ -190,16 +212,18 @@
         <div class="content">
           <div class="ticket-type">Regular</div>
           <div class="type-description">
-            1 Nov - 15 Dec<br>
+            12 Nov - 1 Dec<br>
             Or until sold out
           </div>
-          <div class="ticket-price">Free</div>
-          <a class="btn df-btn df-btn-outline">Get Ticket</a>
+          <div class="ticket-price">RM 10</div>
+          <a href="https://www.eventbrite.com/e/devfest-bizfest-george-town-2018-tickets-50944022944?aff=rm10link"
+             target="_blank"
+             class="btn df-btn df-btn-outline">Get Ticket</a>
         </div>
         <div class="benefits">
           <div><span>Complimentary Lunch</span></div>
         </div>
-      </div> <!-- .ticket-item end -->
+      </div>
     </div>
 
     <p>*Tickets grant access to all conference sections.</p>

@@ -1,5 +1,5 @@
 import {Component, Inject} from '@angular/core';
-import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import {MAT_DIALOG_DATA} from '@angular/material';
 import {Speaker} from "../../models/Speaker";
 
 @Component({
@@ -9,15 +9,11 @@ import {Speaker} from "../../models/Speaker";
 })
 
 export class SpeakerDialogComponent {
+    public htmlBio: any;
 
     constructor(
-        public dialogRef: MatDialogRef<SpeakerDialogComponent>,
         @Inject(MAT_DIALOG_DATA) public data: Speaker
     ) {
+        this.htmlBio = data.bio.replace(new RegExp('/bb', 'g'), '\n');
     }
-
-    onNoClick(): void {
-        this.dialogRef.close();
-    }
-
 }

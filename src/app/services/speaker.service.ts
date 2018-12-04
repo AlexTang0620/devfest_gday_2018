@@ -1,7 +1,10 @@
 import {Injectable} from '@angular/core';
-import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from 'angularfire2/firestore';
+import {AngularFirestore, AngularFirestoreCollection} from 'angularfire2/firestore';
 import {Observable} from 'rxjs';
 import {Speaker} from '../models/Speaker';
+import {map} from "rxjs/operators";
+import {Schedule} from "../models/Schedule";
+import {Course} from "../models/Course";
 
 @Injectable({
     providedIn : 'root'
@@ -9,22 +12,34 @@ import {Speaker} from '../models/Speaker';
 
 export class SpeakerService {
     private speakerCollection: AngularFirestoreCollection<Speaker>;
-    speakers: Observable<Speaker[]>;
 
     constructor(
         public fireStore: AngularFirestore
     ) {
         this.speakerCollection = this.fireStore.collection('speakers');
-        this.speakers = this.speakerCollection.valueChanges();
     }
 
     get() {
-        return this.speakers;
+        return this.speakerCollection
+            .snapshotChanges()
+            .pipe(
+                map(speaker => speaker.map(speaker => {
+                    const speakerData: Speaker = speaker.payload.doc.data();
+                    const id = speaker.payload.doc.id;
+
+                    return {id, ...speakerData};
+                }))
+            );
     }
 
-    getRockStarSpeaker(){
+    getRockStarSpeaker() {
         return this.fireStore.collection<Speaker>('speakers', ref =>
-            ref.limit(4)
+            ref.where('featured', '==', true)
         ).valueChanges();
+    }
+
+    getSpeaker(id) {
+        return this.fireStore.doc<Speaker>(id)
+            .valueChanges();
     }
 }

@@ -5,116 +5,31 @@
 </div>
 
 <div class="container-fluid site-container schedule-wrapper">
-  <div class="row schedule-section">
+  <div class="row schedule-section" *ngFor="let data of schedule | async">
     <div class="schedule-time">
-      <span class="hours">08</span>
-      <span class="minutes">30</span>
+      <span class="hours">{{data.id.substring(0, 2)}}</span>
+      <span class="minutes">{{data.id.substring(2)}}</span>
     </div>
 
     <div class="schedule row m-0">
-        <div class="slot col-12 col-lg d-flex flex-wrap align-content-between">
-          <div class="schedule-details">
-            <h4>Registration & Opening Remark</h4>
-            <div class="schedule-meta d-flex d-lg-block flex-wrap">
-              <div class="hrs">1 Hrs / Registration Area</div>
+      <div class="slot col-12 col-lg d-flex flex-wrap align-content-between"
+           *ngFor="let course of data.courses">
+        <div class="schedule-details">
+          <h4>{{ (course | async)?.name }}</h4>
+          <div class="schedule-meta d-flex d-lg-block flex-wrap">
+            <div class="hrs">{{(course | async)?.length}} / {{(course | async)?.classroom}}</div>
+            <div class="tag" *ngIf="(course | async)?.type as type">
+              <span>[{{ type }}]</span>
             </div>
           </div>
-        </div> <!-- .slot end -->
-    </div>
-  </div>
-
-  <div class="row schedule-section">
-    <div class="schedule-time">
-      <span class="hours">10</span>
-      <span class="minutes">00</span>
-    </div>
-
-    <div class="schedule row m-0">
-        <div class="slot col-12 col-lg d-flex flex-wrap align-content-between">
-          <div class="schedule-details">
-            <h4>The Modern Web: State of the Union</h4>
-            <div class="schedule-meta d-flex d-lg-block flex-wrap">
-              <div class="hrs">1 Hrs / Hall 1</div>
-              <div class="tag"><span class="dot dot-red"></span><span>Pwa</span></div>
-            </div>
+        </div>
+        <div class="speaker-info d-flex align-items-center" *ngIf="(course | async)?.speaker != 'N/A' || ((course | async)?.speaker | async) != null">
+          <div class="profile-image">
+            <figure [ngStyle]="{ 'background-image': 'url(../assets/images/speakers/' + ((course | async)?.speaker | async)?.photo_url + ')'}"></figure>
           </div>
-          <div class="speaker-info d-flex align-items-center">
-            <figure><img src="https://dummyimage.com/50x50/bababa/fff" alt="img"></figure>
-            <span>Vin Lim</span>
-          </div>
-        </div> <!-- .slot end -->
-
-        <div class="slot col-12 col-lg d-flex flex-wrap align-content-between">
-          <div class="schedule-details">
-            <h4>Acer</h4>
-            <div class="schedule-meta d-flex d-lg-block flex-wrap">
-              <div class="hrs">1 Hrs / Hall 1</div>
-              <div class="tag"><span class="dot dot-yellow"></span><span>Marketing</span></div>
-            </div>
-          </div>
-          <div class="speaker-info d-flex align-items-center">
-            <figure><img src="https://dummyimage.com/50x50/bababa/fff" alt="img"></figure>
-            <span>Vin Lim</span>
-          </div>
-        </div> <!-- .slot end -->
-
-        <div class="slot col-12 col-lg d-flex flex-wrap align-content-between">
-          <div class="schedule-details">
-            <h4>Building a globally available microservice with Kubernetes</h4>
-            <div class="schedule-meta d-flex d-lg-block flex-wrap">
-              <div class="hrs">1 Hrs / Hall 1</div>
-              <div class="tag"><span class="dot dot-purple"></span><span>Machine Learning</span></div>
-            </div>
-          </div>
-          <div class="speaker-info d-flex align-items-center">
-            <figure><img src="https://dummyimage.com/50x50/bababa/fff" alt="img"></figure>
-            <span>Thirumalai Aiyalu</span>
-          </div>
-        </div> <!-- .slot end -->
-
-        <div class="slot col-12 col-lg d-flex flex-wrap align-content-between">
-          <div class="schedule-details">
-            <h4>Deep Learning Chronicles: Drone Based Object Detection</h4>
-            <div class="schedule-meta d-flex d-lg-block flex-wrap">
-              <div class="hrs">1 Hrs / Hall 1</div>
-              <div class="tag"><span class="dot dot-blue"></span><span>Machine Learning</span></div>
-            </div>
-          </div>
-          <div class="speaker-info d-flex align-items-center">
-            <figure><img src="https://dummyimage.com/50x50/bababa/fff" alt="img"></figure>
-            <span>Fahim Surani</span>
-          </div>
-        </div> <!-- .slot end -->
-
-        <div class="slot col-12 col-lg d-flex flex-wrap align-content-between">
-          <div class="schedule-details">
-            <h4>Womenwill Intro + Icebreaker</h4>
-            <div class="schedule-meta d-flex d-lg-block flex-wrap">
-              <div class="hrs">1 Hrs / Hall 1</div>
-              <div class="tag"><span class="dot dot-purple"></span><span>Womenwill</span></div>
-            </div>
-          </div>
-          <div class="speaker-info d-flex align-items-center">
-            <figure><img src="https://dummyimage.com/50x50/bababa/fff" alt="img"></figure>
-            <span>Shuant Goh</span>
-          </div>
-        </div> <!-- .slot end -->
-
-        <div class="slot col-12 col-lg d-flex flex-wrap align-content-between">
-          <div class="schedule-details">
-            <h4>Eric</h4>
-            <div class="schedule-meta d-flex d-lg-block flex-wrap">
-              <div class="hrs">1 Hrs / Hall 1</div>
-              <div class="tag"><span class="dot dot-green"></span><span>Womenwill</span></div>
-            </div>
-          </div>
-          <div class="speaker-info d-flex align-items-center">
-            <figure><img src="https://dummyimage.com/50x50/bababa/fff" alt="img"></figure>
-            <span>Eric</span>
-          </div>
-        </div> <!-- .slot end -->
-
+          <span>{{((course | async)?.speaker | async)?.name}}</span>
+        </div>
       </div>
+    </div>
   </div>
-
 </div>

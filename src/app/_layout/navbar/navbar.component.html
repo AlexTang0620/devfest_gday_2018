@@ -1,25 +1,31 @@
 <nav class="devfest-nav navbar navbar-expand-lg">
-    <div class="container d-flex justify-content-between">
-        <div class="navi-logo">
-            <img src="../assets/images/logo-2018.svg" alt="">
-        </div>
-        <button class="navbar-toggler" type="button" (click)="toggleNav()">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="navbar-collapse" id="navbarNav" [ngClass]="{'show': navActive}">
-            <button class="navbar-toggler navbar-toogler-close" type="button" (click)="closeNav()">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <ul class="navbar-nav align-items-center flex-lg-row">
-                <li><a routerLink="" routerLinkActive="active">Home</a></li>
-                <li><a routerLink="schedule" routerLinkActive="active">Schedule</a></li>
-                <li><a routerLink="speakers" routerLinkActive="active">Speakers</a></li>
-                <li><a routerLink="" routerLinkActive="active">Attending</a></li>
-                <li class="btn-link">
-                    <button class="btn df-btn df-btn-outline" (click)="googleSignIn()">Sign In</button>
-                </li>
-                <li class="btn-link"><a class="btn df-btn">Buy Ticket</a></li>
-            </ul>
-        </div>
+  <div class="container d-flex justify-content-between">
+    <div class="navi-logo">
+      <a routerLink="" routerLinkActive="active">
+        <img src="../assets/images/logo-2018.svg" alt="">
+      </a>
     </div>
+    <button class="navbar-toggler" type="button" (click)="toggleNav()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse" id="navbarNav" [ngClass]="{'show': navActive}">
+      <button class="navbar-toggler navbar-toogler-close" type="button" (click)="closeNav()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <ul class="navbar-nav align-items-center flex-lg-row">
+        <li><a routerLink="" routerLinkActive="active">Home</a></li>
+        <li><a routerLink="/schedule" routerLinkActive="active">Schedule</a></li>
+        <li><a routerLink="/speakers" routerLinkActive="active">Speakers</a></li>
+        <!--<li><a routerLink="" routerLinkActive="active">Attending</a></li>-->
+        <!--<li class="btn-link">-->
+        <!--<button class="btn df-btn df-btn-outline" (click)="googleSignIn()">Sign In</button>-->
+        <!--</li>-->
+        <li class="btn-link">
+          <a href="https://www.eventbrite.com/e/devfest-bizfest-george-town-2018-tickets-50944022944?aff=website"
+             target="_blank"
+             class="btn df-btn">Buy Ticket</a>
+        </li>
+      </ul>
+    </div>
+  </div>
 </nav>

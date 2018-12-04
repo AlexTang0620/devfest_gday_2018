@@ -22,21 +22,15 @@ export class HomepageComponent implements OnInit {
     }
 
     showDialog(speaker) {
-        const dialogRef = this.dialog.open(SpeakerDialogComponent, {
+        this.dialog.open(SpeakerDialogComponent, {
             width : '700px',
             data  : {
-                name       : speaker.name,
-                background : speaker.background
+                ...speaker
             }
-        });
-
-        dialogRef.afterClosed().subscribe(result => {
-            console.log('The dialog was closed');
         });
     }
 
     ngOnInit(): void {
 
     }
-
 }
