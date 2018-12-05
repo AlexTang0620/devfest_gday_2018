@@ -22,7 +22,8 @@ import {HomeLayoutComponent} from './_layout/home-layout/home-layout.component';
 import {SpeakerDialogComponent} from './_dialog/speaker-dialog/speaker-dialog.component';
 import {MatDialogModule} from "@angular/material";
 import {AttendingComponent} from './attending/attending.component';
-import { ScheduleDialogComponent } from './_dialog/schedule-dialog/schedule-dialog.component';
+import {ScheduleDialogComponent} from './_dialog/schedule-dialog/schedule-dialog.component';
+import {FaqComponent} from './faq/faq.component';
 
 const appRoutes: Routes = [
     {
@@ -47,6 +48,14 @@ const appRoutes: Routes = [
                 path : 'speakers',
                 component : SpeakersComponent
             },
+            {
+                path : 'attending',
+                component : AttendingComponent
+            },
+            {
+                path : 'faq',
+                component : FaqComponent
+            },
         ]
     },
     {
@@ -70,6 +79,7 @@ const appRoutes: Routes = [
         SpeakerDialogComponent,
         AttendingComponent,
         ScheduleDialogComponent,
+        FaqComponent,
     ],
     exports         : [
         MatDialogModule
