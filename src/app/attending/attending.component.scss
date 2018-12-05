@@ -1,0 +1,96 @@
+@import "../../styling/variables";
+
+.page-content {
+  background: #fff;
+  color: #161845;
+  .attending-item {
+    margin-bottom: 100px;
+  }
+  strong {
+    font-weight: 500;
+  }
+  a {
+    color: $google-yellow;
+    font-weight: 500;
+  }
+}
+
+.download-buttons {
+  padding-top: 20px;
+  a {
+    font-size: 1.6rem;
+    margin-right: 20px;
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+  .btn-download {
+    display: inline-block;
+    width: 138px;
+    border: 1px solid #a8a8a8;
+    @include border-radius(5px);
+    overflow: hidden;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.food-menu {
+  padding-top: 15px;
+  text-align: center;
+  .food-menu-block {
+    padding: 5px;
+    position: relative;
+    @include border-radius(15px);
+    overflow: hidden;
+    &:before {
+      content: '';
+      position: absolute;
+      z-index: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: #f5f5f5;
+      background-image: url(/assets/images/pattern-60px.png);
+
+      //background-image: url('/assets/images/pattern-35px.png');
+      //opacity: 0.05;
+      -webkit-animation: slide 50s linear infinite;
+      animation: slide 50s linear infinite;
+    }
+  }
+  .food-menu-block-inner {
+    position: relative;
+    width: 100%;
+    padding: 15px;
+    @include border-radius(11px);
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.8);
+  }
+
+  .title {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  .food-menu-section {
+    & + .food-menu-section {
+      padding-top: 15px;
+    }
+    p {
+      font-size: 1.4rem;
+    }
+    ul {
+      padding-left: 0px;
+      margin: 0;
+      li {
+        font-size: 1.4rem;
+        padding-top: 2px;
+      }
+    }
+  }
+}

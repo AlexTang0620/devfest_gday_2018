@@ -51,6 +51,15 @@ $btn-dark: #171948;
   to { background-position: -400px 0; }
 }
 
+@-webkit-keyframes slideUp {
+  from { background-position: 0 0; }
+  to { background-position: 0 -400px; }
+}
+@keyframes slideUp {
+  from { background-position: 0 0; }
+  to { background-position: 0 -400px; }
+}
+
 @-webkit-keyframes bounceIn {
   from,
   20%,
