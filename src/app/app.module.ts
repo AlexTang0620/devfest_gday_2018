@@ -53,7 +53,7 @@ const appRoutes: Routes = [
                 component : AttendingComponent
             },
             {
-                path : 'faq',
+                path : 'qna',
                 component : FaqComponent
             },
         ]
